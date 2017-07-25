@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Starting Windows...</title>
+        <link rel="icon" href="winicon.ico"/>
+        <style>
+            *{
+                background-color: black;
+            }
+            html{
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            #img{
+                height: 100vh;
+                position: relative;
+
+            }
+            #top{
+                font-family: Tahoma;
+                font-weight: normal;
+                position: absolute;
+                z-index: 1;
+                margin-top: 30px;
+                margin-left: 30px;
+                color: white;
+                
+            }
+            #top2{
+                font-family: Tahoma;
+                font-weight: normal;
+                position: absolute;
+                z-index: 1;
+                margin-top: 90px;
+                margin-left: 30px;
+                color: white;
+                
+            }
+            #btn{
+                margin: 0;
+                padding: 0;
+                border: none;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #btn:focus{
+                outline: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 id="top">Click the image to make this fullscreen and hide this message<br>Click it again or press ESC or F11 to exit full screen</h3>
+        <h4 id="top2">If you press ESC or F11, click again to see this</h4>
+        <button onclick="fullScreen()" id="btn">
+            <img id="img" src="http://danlee.uk.to/winloading.gif"/>
+        </button>
+        <script type="text/javascript">
+        on = false
+        function fullScreen() {
+            if(on == false){
+                document.getElementById("top").style.display = "none";
+                document.getElementById("top2").style.display = "none";
+                if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
+                    if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen();
+
+                    } else if (document.documentElement.mozRequestFullScreen) {
+                        document.documentElement.mozRequestFullScreen();
+
+                    } else if (document.documentElement.webkitRequestFullscreen) {
+                        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                }
+            on = true
+            }
+            else{
+                document.getElementById("top").style.display = "block";
+                document.getElementById("top2").style.display = "block";
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                on = false;
+            }
+        }
+        
+        </script>
+    </body>
+</html>
