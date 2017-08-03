@@ -1,0 +1,5 @@
+AuthName "You must log in to access this page"
+AuthType Basic
+AuthUserFile .htpasswd
+AuthGroupFile /dev/null 
+require valid-user

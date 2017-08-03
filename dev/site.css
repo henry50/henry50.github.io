@@ -1,0 +1,135 @@
+html{
+    background-color: whitesmoke;
+    font-family: Arial;
+}
+#main{
+    width: 60%;
+    border: 1px solid black;
+    height: 1000px;
+    margin-left: 25px;
+    margin-top: 25px;
+    display: inline-block;
+}
+#side1{
+    margin-top: 25px;
+    width:30%;
+    margin-right: 25px;
+    border: 1px solid black;
+    float: right;
+    display: inline-block;
+}
+.header{
+    height: 70px;
+    background-color: #222d3d;
+    position: relative;
+    width: 100%;
+}
+#weltitle{
+    top:0;
+    bottom: 0;
+    line-height: 70px;
+    margin-top: auto;
+    margin-bottom: auto;
+    position: absolute;
+}
+#tdiv, #sdiv, #rdiv{
+    position: relative;
+    height: 100%;
+    display: inline-block;
+}
+#tdiv{
+    width: 40%;
+}
+#sdiv{
+    width: 20%;
+}
+#rdiv{
+    width: 10%;
+    margin-right: 25px;
+    float: right;
+}
+#rnd{
+    width: 100%;
+    height: 40px;
+    background-color: #222d3d;
+    border: 1px solid white;
+    color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#rnd:hover{
+    background-color: #577baf;
+}
+#mtitle{
+    width: 100%;
+    position: absolute;
+    line-height: 70px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#srch{
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.white{
+    background-color: white;
+}
+.title{
+    color: white;
+    margin-left: 25px;
+    font-size: 30px;
+}
+#welcome{
+    text-align: center;
+}
+#welp{
+    margin: 25px;
+    margin-top: 0px;
+    font-size: 18px;
+}
+#maincontent{
+    width: 100%;
+    position: relative;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.item{
+    display: inline-block;
+    width: 15%;
+    position: relative;
+    border: 1px solid black;
+}
+.thumb{
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.imgwrap{
+    position: relative;
+    height: 80%;
+    width: 100%;
+}
+.name{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 50%;    
+    background-color: white;
+}
