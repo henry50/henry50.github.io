@@ -1,0 +1,107 @@
+html{
+    font-family: sans-serif;
+    /*background-color: #d42426;*/
+    color: white;
+    background: repeating-linear-gradient(
+        315deg,
+        rgba(0, 148, 13,0.7),
+        rgba(0, 148, 13,0.7) 20px,
+        rgba(212, 36, 38, 0.7) 20px,
+        rgba(212, 36, 38, 0.7) 40px
+      );
+    -moz-background: repeating-linear-gradient(
+        315deg,
+        rgba(0, 148, 13,0.7),
+        rgba(0, 148, 13,0.7) 20px,
+        rgba(212, 36, 38, 0.7) 20px,
+        rgba(212, 36, 38, 0.7) 40px
+      );
+    -webkit-background: repeating-linear-gradient(
+        315deg,
+        rgba(0, 148, 13,0.7),
+        rgba(0, 148, 13,0.7) 20px,
+        rgba(212, 36, 38, 0.7) 20px,
+        rgba(212, 36, 38, 0.7) 40px
+      );
+    background-size: auto 100%;
+    min-height: 100%;
+    background-attachment: fixed;
+    -webkit-background-attachment: fixed;
+    -moz-background-attachment: fixed;
+}
+#dtc{
+    text-align: center;
+    font-size: 200px;
+    margin: 0;
+}
+#udtc{
+    text-align: center;
+    margin: 0;
+    font-size: 40px;
+}
+#search{
+    height: 20px;
+    width: 500px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+#search:focus{
+    outline: none;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#sbtn{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    height: 35px;
+    width: 90px;
+    background-color: #00940d;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+}
+#sbtn:focus{
+    outline: none;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 550px){
+    #search{
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 450px){
+    #search{
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 350px){
+    #search{
+        width: 300px;
+    }
+}
+@media only screen and (max-height: 650px){
+    #dtc{
+        font-size: 100px;
+    }
+}
+@media only screen and (max-height: 450px){
+    #udtc{
+        font-size: 30px;
+    }
+    #dtc{
+        font-size: 80px;
+    }
+    #sbtn{
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-70%, -50%);
+    }
+}
