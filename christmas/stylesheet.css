@@ -86,11 +86,6 @@ html{
         width: 300px;
     }
 }
-@media only screen and (max-height: 650px){
-    #dtc{
-        font-size: 100px;
-    }
-}
 @media only screen and (max-height: 450px){
     #udtc{
         font-size: 30px;
