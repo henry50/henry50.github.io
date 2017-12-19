@@ -30,7 +30,6 @@ function showRemaining() {
 timer = setInterval(showRemaining, 1000);
 //Search
 function search(){
-    window.alert("called")
     var inp = document.getElementById("search");
     var query = inp.value;
     var glink = "https://goo.gl/search/" + query;
