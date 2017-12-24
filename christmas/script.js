@@ -15,14 +15,17 @@ function showRemaining() {
 
         clearInterval(timer);
         document.getElementById('dtc').innerHTML = "Merry Christmas!";
-
+        document.getElementById('udtc').style.visibility = "hidden";
         return;
     }
+    
     var days = Math.floor(distance / _day);
     var hours = Math.floor((distance % _day) / _hour);
     var minutes = Math.floor((distance % _hour) / _minute);
     var seconds = Math.floor((distance % _minute) / _second);
-
+    if(days == 0){
+        document.getElementById('udtc').innerHTML = "day till Christmas";
+    }
     document.getElementById("dtc").innerHTML = days+1;
 
 }
