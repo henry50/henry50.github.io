@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html{
+                font-family: sans-serif;
+            }
+            #step2{
+                margin-top: 20px;
+            }
+            canvas{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="step1">
+            <p>Image URL:</p>
+            <input id="url">
+            <button onclick="display()">View</button>
+            <p>https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png</p>
+        </div>
+        <div id="step2" style="display: none;">
+            <img id="res1" src="#"/>
+            <canvas id="imgc">Error</canvas>
+        </div>
+        <div id="step3" style="display: none;">
+            <button id="dl" onclick="save()">Download</button>
+        </div>
+        <script type="text/javascript" src="image.js"></script>
+    </body>
+</html>
