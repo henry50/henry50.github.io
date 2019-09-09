@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Lesson times</title>
+    <style>
+      #main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #lno, #end{
+        text-align: center;
+        font-family: "Arial";
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <h1 id="lno">Lesson ?</h1>
+      <h2 id="end">Ends in ?</h2>
+    </div>
+
+
+    <script type="text/javascript">
+      var dt = new Date();
+      //dt.setDate(dt.getDate() + 1); //Test
+      var dy = dt.getDate()
+      var mn = dt.getMonth()
+      var yr = dt.getFullYear()
+      var times = {
+        "1": new Date(yr, mn, dy, 10, 15, 0),
+        "2": new Date(yr, mn, dy, 11, 15, 0),
+        "3": new Date(yr, mn, dy, 12, 35, 0),
+        "4": new Date(yr, mn, dy, 14, 25, 0),
+        "5": new Date(yr, mn, dy, 15, 25, 0)
+      }
+      refresh = function() {
+        var d = new Date();
+	    //var d = new Date(yr, mn, dy, 14, 15, 0); //Test
+        l = document.getElementById("lno");
+        e = document.getElementById("end");
+        match = []
+        for (var index in times) {
+          if (times[index] > d) {
+            match.push(index);
+          };
+        }
+        console.log(match)
+        if (match.length == 0){
+            var sstart = new Date(yr, mn, dy, 09, 15, 0);
+            var sdiff = sstart - d;
+            if (sdiff < 0){
+                sstart = new Date(yr, mn, dy+1, 09, 15, 0);
+                sdiff = sstart - d;
+            }
+            function pad(n, z) {
+                z = z || 2;
+                return ('00' + n).slice(-z);
+            }
+            var s = sdiff;
+            var ms = s % 1000;
+            s = (s - ms) / 1000;
+            var secs = s % 60;
+            s = (s - secs) / 60;
+            var mins = s % 60;
+            var hrs = (s - mins) / 60;
+            var stime = pad(hrs) + " hours and " + pad(mins + 1) + " minutes";
+            e.innerHTML = "School begins in: " + stime;
+            l.innerHTML = "School has not started yet"
+        }else{
+            lessend = times[match[0]]
+            tdiff = lessend - d;
+            resm = Math.floor(tdiff / 1000 / 60) + " minutes";
+            e.innerHTML = "Ends in " + resm;
+            l.innerHTML = "Lesson " + match[0]
+        }
+
+      }
+      refresh()
+      setInterval(refresh, 1000)
+
+    </script>
+  </body>
+
+</html>
