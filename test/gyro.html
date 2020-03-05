@@ -1,0 +1,16 @@
+<html>
+<body>
+<script>
+let sensor = new Gyroscope();
+sensor.start();
+
+sensor.onreading = () => {
+    document.write("Angular velocity around the X-axis " + sensor.x);
+    document.write("Angular velocity around the Y-axis " + sensor.y);
+    document.write("Angular velocity around the Z-axis " + sensor.z);
+};
+
+sensor.onerror = event => console.log(event.error.name, event.error.message);
+</script>
+</body>
+</html>
