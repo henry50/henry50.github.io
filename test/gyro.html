@@ -1,13 +1,19 @@
 <html>
 <body>
+<p id="x">X axis</p>
+<p id="y">Y axis</p>
+<p id="z">Z axis</p>
 <script>
+var xp = document.getElementById("x");
+var yp = document.getElementById("y");
+var zp = document.getElementById("z");
 let sensor = new Gyroscope();
 sensor.start();
 
 sensor.onreading = () => {
-    document.write("Angular velocity around the X-axis " + sensor.x);
-    document.write("Angular velocity around the Y-axis " + sensor.y);
-    document.write("Angular velocity around the Z-axis " + sensor.z);
+    xp.innerHTML = "X-axis " + sensor.x;
+    yp.innerHTML = "Y-axis " + sensor.y;
+    zp.innerHTML = "Z-axis " + sensor.z;
 };
 
 sensor.onerror = event => console.log(event.error.name, event.error.message);
