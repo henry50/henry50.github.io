@@ -4,6 +4,8 @@
 <title>Microphone test</title>
 </head>
 <body>
-<input type="file" accept="audio/*;capture=microphone">
+<script>
+navigator.mediaDevices.getUserMedia({audio:!0})
+  </script>
 </body>
 </html>
