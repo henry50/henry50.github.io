@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FREE RAM!!!!</title>
+  <style>
+    .progress-wrapper {
+      width: 100%;
+      background-color: grey;
+    }
+
+    .progress-inner {
+      width: 1%;
+      height: 30px;
+      background-color: green;
+    }
+
+    button {
+      color: white;
+      background-color: lime;
+      font-size: 48px;
+      border: 1px solid green;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: center;">hi welcom to freeram4u.net</h1>
+  <h2>Pleas clik the buton to donwlod mor rAM</h2>
+  <button onclick="move()"><img src = "https://static.vecteezy.com/system/resources/thumbnails/000/562/188/small/BUTTON-d-5.jpg"/></button>
+  <br><br>
+  <div class="progress-wrapper">
+    <div class="progress-inner" id="bar"></div>
+  </div>
+  <p style="display: none; color: red; font-size: 96px;" id="comp">DOWNLOD COMPLET</p>
+  <a style = "display: none; font-family: Comic Sans MS; font-size: 48px;" id = "lnk" href = "error.html">GO TO FREE rAM!1!!</a>
+  <script>
+    var i = 0;
+
+    function move() {
+      if (i == 0) {
+        i = 1;
+        var elem = document.getElementById("bar");
+        var width = 1;
+        var id = setInterval(frame, 10);
+
+        function frame() {
+          if (width >= 100) {
+            clearInterval(id);
+            i = 0;
+            document.getElementById("comp").style.display = "block";
+            document.getElementById("lnk").style.display = "block";
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
+      }
+    }
+  </script>
+
+</html>
