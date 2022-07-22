@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "stylesheet.css"/>
+    <title>numero</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>numero</h1>
+    <div class = "board">
+        <div class = "row row-1">
+            <div class = "col col-11"></div>
+            <div class = "col col-12"></div>
+            <div class = "col col-13"></div>
+            <div class = "col col-14"></div>
+            <div class = "col col-15"></div>
+        </div>
+        <div class = "row row-2">
+            <div class = "col col-21"></div>
+            <div class = "col col-22"></div>
+            <div class = "col col-23"></div>
+            <div class = "col col-24"></div>
+            <div class = "col col-25"></div>
+        </div>
+        <div class = "row row-3">
+            <div class = "col col-31"></div>
+            <div class = "col col-32"></div>
+            <div class = "col col-33"></div>
+            <div class = "col col-34"></div>
+            <div class = "col col-35"></div>
+        </div>
+        <div class = "row row-4">
+            <div class = "col col-41"></div>
+            <div class = "col col-42"></div>
+            <div class = "col col-43"></div>
+            <div class = "col col-44"></div>
+            <div class = "col col-45"></div>
+        </div>
+        <div class = "row row-5">
+            <div class = "col col-51"></div>
+            <div class = "col col-52"></div>
+            <div class = "col col-53"></div>
+            <div class = "col col-54"></div>
+            <div class = "col col-55"></div>
+        </div>
+        <div class = "row row-6">
+            <div class = "col col-61"></div>
+            <div class = "col col-62"></div>
+            <div class = "col col-63"></div>
+            <div class = "col col-64"></div>
+            <div class = "col col-65"></div>
+        </div>
+    </div>
+    <div class = "input">
+        <div class = "input-row">
+            <button class = "input-button input-value" data-value = 7>7</button>
+            <button class = "input-button input-value" data-value = 8>8</button>
+            <button class = "input-button input-value" data-value = 9>9</button>
+        </div>
+        <div class = "input-row">
+            <button class = "input-button input-value" data-value = 4>4</button>
+            <button class = "input-button input-value" data-value = 5>5</button>
+            <button class = "input-button input-value" data-value = 6>6</button>
+        </div>
+        <div class = "input-row">
+            <button class = "input-button input-value" data-value = 1>1</button>
+            <button class = "input-button input-value" data-value = 2>2</button>
+            <button class = "input-button input-value" data-value = 3>3</button>
+        </div>
+        <div class = "input-row">
+            <button class = "input-button input-ok">OK</button>
+            <button class = "input-button input-value" data-value = 0>0</button>
+            <button class = "input-button input-del">DEL</button>
+        </div>
+    </div>
+    <button class = "topright-button replay-button">Play again?</button>
+    <div class = "finish-modal-background"></div>
+    <div class="finish-modal">
+        <p class = "finish-close">&times;</p>
+        <p class = "finish-title">[modal title]</p>
+        <p class = "finish-score">[modal message]</p>
+        <button class = "finish-button replay-button">Play again?</button>
+    </div>
+    <script type = "text/javascript" src = "numero.js"></script>
+</body>
+</html>

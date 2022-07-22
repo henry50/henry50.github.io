@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    background-color: #0D1B2A;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.board{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.row{
+    display: flex;
+}
+
+.col{
+    background-color: #415A77;
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-row{
+    padding: 3px;
+}
+
+.input-button{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    background-color: #778DA9;
+    color: white;
+}
+
+.input-button:hover{
+    background-color: #1B263B;
+}
+
+.finish-modal-background{
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(119, 141, 169, 0.9);
+}
+
+.finish-modal{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1B263B;
+    color: white;
+    padding: 10px;
+    border: 3px solid white;
+    width: 50%;
+}
+
+.finish-close{
+    color: red;
+    font-weight: bold;
+    font-size: 24px;
+    float: right;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.finish-title{
+    font-size: 48px;
+    text-align: center;
+    padding: 20px;
+}
+
+.finish-score{
+    font-size: 24px;
+    text-align: center;
+}
+
+.replay-button{
+    background-color: #778DA9;
+    color: white;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.finish-button{
+    margin: 20px auto;
+    display: block;
+}
+
+.topright-button{
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
