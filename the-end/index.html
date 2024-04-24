@@ -6,6 +6,7 @@
     <title>The End</title>
     <style>
         body{
+            margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -13,17 +14,24 @@
             font-family: 'Courier New', Courier, monospace;
             height: 100vh;
         }
-        .wrapper{
+        .timer{
             display: flex;
             flex-direction: row;
         }
         .col{
             width: 10vw;
         }
-        .num, .cap{
+        .num, .cap, .title{
             text-align: center;
         }
         .num{
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        #end .title{
+            font-size: 32px;
+        }
+        #end .num{
             font-size: 64px;
             margin-bottom: 16px;
         }
@@ -41,43 +49,68 @@
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="col">
-            <p class="num" id="dd">00</p>
-            <p class="cap">days</p>
-        </div>
-        <div class="col">
-            <p class="num" id="hh">00</p>
-            <p class="cap">hours</p>
-        </div>
-        <div class="col">
-            <p class="num" id="mm">00</p>
-            <p class="cap">minutes</p>
-        </div>
-        <div class="col">
-            <p class="num" id="ss">00</p>
-            <p class="cap">seconds</p>
-        </div>
-    </div>
-    <h1>until The End</h1>
+    <div id="countdown-container"></div>
     <script type="text/javascript">
+        const template = (id, title) => `<div class="countdown" id="${id}">
+            <div class="timer">
+                <div class="col">
+                    <p class="num dd">00</p>
+                    <p class="cap">days</p>
+                </div>
+                <div class="col">
+                    <p class="num hh">00</p>
+                    <p class="cap">hours</p>
+                </div>
+                <div class="col">
+                    <p class="num mm">00</p>
+                    <p class="cap">minutes</p>
+                </div>
+                <div class="col">
+                    <p class="num ss">00</p>
+                    <p class="cap">seconds</p>
+                </div>
+            </div>
+            <p class="title">${title}</p>
+        </div>`;
+        let timers = [
+            {id: "end", end: new Date(2024, 5, 4, 16), title: "until The End"},
+            {id: "cs313", end: new Date(2024, 3, 24, 12), title: "until CS313 coursework deadline"},
+            {id: "diss", end: new Date(2024, 3, 30, 12), title: "until dissertation deadline"},
+            {id: "rev", end: new Date(2024, 4, 8, 10), title: "until the last revision lecture"},
+            {id: "start", end: new Date(2024, 4, 14, 9, 30), title: "until the first exam"},
+        ];
         const divmod = (x, y) => [Math.floor(x / y), x % y];
-        function getTime(){
+        function getTime(end){
             const now = new Date();
-            const end = new Date(2024, 5, 4, 16);
-            const diff = Math.floor((end - now) / 1000);
+            let diff = Math.floor((end - now) / 1000);
+            diff = diff < 0 ? 0 : diff; // ignore negative difference
             const [days, h] = divmod(diff, 86400);
             const [hours, m] = divmod(h, 3600);
             const [minutes, seconds] = divmod(m, 60);
-            return [days, hours, minutes, seconds].map((x) => x < 10 ? "0" + x.toString() : x.toString());
+            return {time: [days, hours, minutes, seconds].map((x) => x < 10 ? "0" + x.toString() : x.toString()), ended: diff == 0};
         }
         window.onload = function() {
+            // create timers
+            const container = document.getElementById("countdown-container");
+            timers.forEach((t) => {
+                const html = template(t.id, t.title);
+                container.insertAdjacentHTML("beforeend", html);
+            })
+            // update timers
             setInterval(() => {
-                const time = getTime();
-                ["dd", "hh", "mm", "ss"].forEach((id, i) => {
-                    document.getElementById(id).innerHTML = time[i];
+                const toRemove = [];
+                timers.forEach((t) => {
+                    const {time, ended} = getTime(t.end);
+                    if(ended){
+                        document.querySelectorAll(`#${t.id} *`).forEach((e) => e.style.textDecoration = "line-through");
+                        toRemove.push(t);
+                    }
+                    ["dd", "hh", "mm", "ss"].forEach((cls, i) => {
+                        document.querySelector(`#${t.id} .${cls}`).innerHTML = time[i];
+                    })
                 })
-            }, 100);
+                timers = timers.filter((t) => !!toRemove.indexOf(t))
+            }, 250);
         };
     </script>
 </body>
